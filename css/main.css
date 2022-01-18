@@ -8,3 +8,11 @@
 .spawn_time{
     width: 175px;
 }
+.shadow{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px red;
+}
+.cardes{
+    background-image:url(/img/asdfghjkl.png)
+}

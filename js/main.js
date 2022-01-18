@@ -11,7 +11,7 @@ function renderPokemonItem(pokemon=pokemons[0]){
     colEl.setAttribute('class', 'col-12 col-sm-6  col-md-4 ')
     console.log(pokemon)
     let pokemonItem=document.createElement('div')
-    pokemonItem.setAttribute('class', 'card position-relative')
+    pokemonItem.setAttribute('class', 'card border-0 position-relative shadow cardes')
     
 
     let pokemonImg=document.createElement('img')
@@ -63,13 +63,24 @@ function renderPokemonItem(pokemon=pokemons[0]){
     pokemonAvg_spawnsEl.setAttribute('class','rounded p-2 border mb-1 borderpokemonSpawn_chanceEl spawn_time')
     pokemonAvg_spawnsEl.textContent="avg_spawns:"+pokemon.avg_spawns
 
-    pokemonBody.appendChild(renderPokemonCandy(pokemon))
+    let multip=document.createElement('h6')
+    multip.setAttribute('class','rounded p-2 border mb-1  borderpokemonSpawn_chanceEl spawn_time')
+    multip.textContent='weaknesses:'+pokemon.multipliers;
+
+
+    let candy_cPok=document.createElement('h6')
+    candy_cPok.setAttribute('class', 'rounded p-2 border mb-1  borderpokemonSpawn_chanceEl spawn_time')
+    candy_cPok.textContent='candy_count:'+ pokemon.candy_count
+  
     pokemonBody.appendChild(pokemonNameEl)
     pokemonBody.appendChild(pokemonNum)
     pokemonBody.appendChild(pokemonEggEl)
     pokemonBody.appendChild(pokemonAvg_spawnsEl)
     pokemonBody.appendChild(pokemonSpawn_chanceEl   )
     pokemonBody.appendChild(pokemonSpawn_timeEl)
+    pokemonBody.appendChild(multip)
+    pokemonBody.appendChild(candy_cPok)
+    pokemonBody.appendChild(renderPokemonCandy(pokemon))
     pokemonBody.appendChild(renderPokemonType(pokemon))
     pokemonItem.appendChild(pokemonImg)
     pokemonItem.appendChild(pokemonBody)
@@ -91,19 +102,6 @@ function renderPokemonType (pokemon){
 
     return pokemonTypeEl
 }
-
-// function renderPokemonMultipliers (pokemon){
-//     let PokemonMultipliersmonTypeEl=document.createElement('div')
-//     let pokemonMultipliers=pokemon.multipliers.join(' ')
-
-//     for(let multipliers of pokemonMultipliers){
-//         let MultipliersItem=document.createElement('div')
-//         MultipliersItem.setAttribute('class', 'badge ms-2 me-2 bg-success text-white')
-//         MultipliersItem.textContent=multipliers
-//         PokemonMultipliersmonTypeEl.appendChild(MultipliersItem)
-//     }
-//     return PokemonMultipliersmonTypeEl
-// }
 
 
 
