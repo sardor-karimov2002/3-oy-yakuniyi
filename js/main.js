@@ -104,12 +104,6 @@ function renderPokemonType (pokemon){
 //     }
 //     return PokemonMultipliersmonTypeEl
 // }
-console.log(pokemons[i].multipliers)
-for(let j=0; j<pokemons[i].multipliers.length;j++){
-    var h5Element=document.createElement('h5')
-    h5Element.textContent="muly:"+movies[i].genres[j]
-
-}
 
 
 
